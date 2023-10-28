@@ -88,8 +88,11 @@ const App: React.FC = () => {
   return (
       <AppWrapper>
           {!isMobile && <NavWrapper>
+            <NavHeaderWrapper>
+              <h1>40th Ward Data</h1>
+            </NavHeaderWrapper>
             <NavButtonWrapper active={selectedIndex == 0} onClick={() => handleState(0)}>
-              <NavButton icon={<Home color="white"/>} text="Project Overview" />
+              <NavButton icon={<Home color="white"/>} text="Ward Overview" />
             </NavButtonWrapper>
             <NavButtonWrapper active={selectedIndex == 1}onClick={() => handleState(1)}>
               <NavButton icon={<Bike color="white" size={24}/>} text="Existing Bike Routes" />
@@ -98,10 +101,10 @@ const App: React.FC = () => {
               <NavButton icon={<Hourglass color="white"/>} text="Future Bike Routes" />
             </NavButtonWrapper>
             <NavButtonWrapper active={selectedIndex == 3} onClick={() => handleState(3)}>
-              <NavButton icon={<RouteIcon color="white"/>} text="Cycleway Route" />
+              <NavButton icon={<RouteIcon color="white"/>} text="Project Sidewalk Survey Data" />
             </NavButtonWrapper>
             <NavButtonWrapper active={selectedIndex == 4} onClick={() => handleState(4)}>
-              <NavButton icon={<Mail color="white"/>} text="More Info" />
+              <NavButton icon={<Mail color="white"/>} text="Contact &#38; More Info" />
             </NavButtonWrapper>
           </NavWrapper>}
           {isMobile && <NavWrapper onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
@@ -137,11 +140,6 @@ const App: React.FC = () => {
                       Peterson/Ridge Metra Station
                     </Popup>
                   </Marker>
-                  <Marker position={[41.987, -87.6885]} icon={createIcon("https://i.imgur.com/ECkFbCf.png")}>
-                    <Popup>
-                      West Ridge Nature Park
-                    </Popup>
-                  </Marker>
                   {(selectedIndex == 0 || selectedIndex > 2) && <GeoJSON data={rosehillRoute} onEachFeature={rosehillRouteStyle}></GeoJSON>}
                   {selectedIndex == 1 && <GeoJSON  data={existingRoutes} onEachFeature={existingRoutesStyle}/>}
                   {selectedIndex == 2 && <GeoJSON  data={allRoutes} onEachFeature={allRoutesStyle}/>}
@@ -174,7 +172,7 @@ const MapWrapper = styled.div`
     width: 55%;
     min-width: ${isMobile ? "100%" : "600px"};
 `
-
+// remove align-items to fix centering on web (does it break mobile?)
 const NavWrapper = styled.div`
   display: flex;
   position: relative;
@@ -188,6 +186,12 @@ const NavWrapper = styled.div`
   min-width: ${isMobile ? "100vw" : "200px"};
   color: white;
   gap: 8px;
+`
+
+const NavHeaderWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 `
 
 const TitleWrapper = styled.div`
