@@ -1,0 +1,47 @@
+{
+  "name": "rosehill-cycleway",
+  "version": "1.0.0",
+  "private": true,
+  "description": "rosehill-cycleway",
+  "author": "Brandon",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@nfront/global-styles": "^1.2.1",
+    "@reduxjs/toolkit": "^1.9.5",
+    "@types/leaflet": "^1.9.3",
+    "@types/react-leaflet": "^3.0.0",
+    "babel-plugin-styled-components": "^2.1.4",
+    "gatsby": "^5.11.0",
+    "gatsby-plugin-google-gtag": "^5.12.0",
+    "gatsby-plugin-gtag": "^1.0.13",
+    "gatsby-plugin-react-leaflet": "^4.0.3",
+    "gatsby-plugin-styled-components": "^6.11.0",
+    "ismobilejs": "^1.1.1",
+    "leaflet": "^1.9.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-leaflet": "^4.2.1",
+    "react-redux": "^8.1.2",
+    "react-router-dom": "^6.15.0",
+    "styled-components": "^6.0.7",
+    "styled-reset": "^4.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.3.3",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.7",
+    "typescript": "^5.1.6"
+  }
+}
